@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     # With this permissions, the workflow can add labels to the PR
     permissions:
+      contents: read
       pull-requests: write
     steps:
       - name: Checkout code
