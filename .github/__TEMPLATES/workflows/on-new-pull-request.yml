@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Try to add label
         run: |
           gh pr edit ${{ github.event.pull_request.number }} --add-label "needs-review"
