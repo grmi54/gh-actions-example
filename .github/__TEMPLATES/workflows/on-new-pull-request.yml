@@ -15,7 +15,6 @@ jobs:
     # With this permissions, the workflow can add labels to the PR
     permissions:
       pull-requests: write
-      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
