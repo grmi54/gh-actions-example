@@ -6,7 +6,7 @@
 name: Add Label to new PR
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened]
 
 jobs:
@@ -17,8 +17,8 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - name: Checkout PR branch
-        uses: actions/checkout@v4
+#      - name: Checkout PR branch
+#        uses: actions/checkout@v4
       - name: Try to add label
         run: |
           gh pr edit ${{ github.event.pull_request.number }} --add-label "needs-review"
